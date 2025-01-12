@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Doctolib Ratings Popup</title>
+    <style>
+        body {
+            width: 300px;
+            padding: 10px;
+        }
+         input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        #status{
+           margin-bottom: 10px;
+           font-size: 0.8rem;
+           color: green;
+        }
+        button{
+          padding: 10px 15px;
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+          cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+  <h1>Doctolib Ratings</h1>
+    <label for="apiKey">Google Maps API Key:</label><br>
+    <input type="text" id="apiKey" placeholder="Enter your API key"><br><br>
+    <label for="extensionEnabled">Enable Extension:</label>
+    <input type="checkbox" id="extensionEnabled"><br><br>
+    <button id="save">Save</button>
+    <div id="status"></div>
+  <script src="popup.js"></script>
+</body>
+</html>
