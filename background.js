@@ -14,7 +14,8 @@ async function fetchGoogleReviews(doctorName, doctorAddress, apiKey) {
             if (detailsData.result) {
                 return {
                     rating: detailsData.result.rating,
-                    reviewCount: detailsData.result.user_ratings_total
+                    reviewCount: detailsData.result.user_ratings_total,
+                    placeId: placeId
                 };
             }
         }

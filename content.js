@@ -5,7 +5,17 @@ function displayReviews(element, reviews) {
     reviewContainer.classList.add('review-container');
     reviewContainer.style.fontWeight = 'normal';
     if (reviews && reviews.rating !== undefined && reviews.reviewCount !== undefined) {
-        reviewContainer.textContent = ` ⭐${reviews.rating} (${reviews.reviewCount} reviews)`;
+        if (reviews.placeId) {
+            const link = document.createElement('a');
+            link.href = `https://www.google.com/maps/place/?q=place_id:${reviews.placeId}`;
+            link.target = '_blank';
+            link.style.textDecoration = 'none';
+            link.style.color = 'inherit';
+            link.textContent = ` ⭐${reviews.rating} (${reviews.reviewCount} reviews)`;
+            reviewContainer.appendChild(link);
+        } else {
+            reviewContainer.textContent = ` ⭐${reviews.rating} (${reviews.reviewCount} reviews)`;
+        }
     } else {
         reviewContainer.textContent = 'No rating found';
     }
